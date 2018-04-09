@@ -21,11 +21,7 @@ pizzatypes = {
     12: "Base free Pizza"
     }
 def dp():
-    global stat
-    global dorp
-    global number
-    global address
-    global cost
+    global stat, dorp, number, address, cost
     stat = input("Do you want to pickup?(y/n)")
     if stat.lower() == 'y':
         dorp = "Pickup"
@@ -39,13 +35,7 @@ def dp():
         
     
 def finalorder():
-    global cost
-    global name
-    global pizzalist
-    global dorp
-    global stat
-    global number
-    global address
+    global cost, name, pizzalist, dorp, stat, number, address
     print("*"*36)
     print("Client Name: ", name)
     print("Delivery or Pickup: ", dorp)
@@ -55,9 +45,7 @@ def finalorder():
     print("Cost: $", cost)
     print("*"*36)
 def order():
-    global cost
-    global name
-    global pizzalist
+    global cost, name, pizzalist
     print("Client Name: ", name)
     print("Cost: $", cost)
     print(pizzalist)
@@ -68,9 +56,7 @@ def menu():
         print(" "*10 + str(k) + " " + str(v))
     print("*"*36)
 def main():
-    
-    global cost
-    global name
+    global cost, name
     name = input('Client Name: ')
     menu()
     for i in range(5):
