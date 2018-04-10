@@ -43,6 +43,7 @@ def finalorder(): ## Function to display The final order
     if stat.lower() == "n":
         print("Phone Number: ", number)
         print("Address: ", address)
+    print("Pizzas ordered: ", pizzalist)
     print("Cost: $" + str(cost))
     print("*"*36)
 def order(): ## Function to display a basic version of the final order
