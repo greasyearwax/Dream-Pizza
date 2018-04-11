@@ -62,13 +62,17 @@ def main(): ## Main Function
     name = input('Client Name: ')
     menu()
     for i in range(5):
-        while(1 == 1):
-            pizza = int(input('Please select a pizza:'))
-            if pizza > 0 and pizza <13:            ## Making sure the client does not select a value outside of the range
-                pizzalist.append(pizzatypes[pizza])
-                break
-            else:
-                print("Error please enter pizza within the specified range")
+        while(True):
+            try:
+                pizza = int(input('Please select a pizza:'))
+                if pizza > 0 and pizza <13:            ## Making sure the client does not select a value outside of the range
+                    pizzalist.append(pizzatypes[pizza])
+                    break
+                else:
+                    print("Error please enter pizza within the specified range")
+            except ValueError:
+                print("Error Non-Numerical Data format found")
+                
         if pizza <= 7:
             cost = cost+8.50
         elif pizza >= 8:  ## Calculating cost
