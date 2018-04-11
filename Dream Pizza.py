@@ -20,6 +20,17 @@ pizzatypes = { ## List of different Pizzas
     11: "xTRA greasy",
     12: "Base free Pizza"
     }
+def varclear():
+
+    cost = 0
+    name = ""
+    pizzalist =[]
+    dorp = "" ## Clearing Variables
+    stat = ""
+    number = 0
+    address = ""
+    main()
+    choice = 0
 def dp():  ## Function for Delivery or Pickup
     global stat, dorp, number, address, cost
     stat = input("Do you want to pickup?(y/n)")
@@ -77,31 +88,27 @@ def main(): ## Main Function
             cost = cost+8.50
         elif pizza >= 8:  ## Calculating cost
             cost = cost+8.50+5.00
-        print('''
+        while(True):
+            print('''
             1: "Cancel",
             2: "Finish"
             3: "Continue order"
             ''')
-        orderchoice = int(input())
-        while(1 == 1):
-            if orderchoice == 1:
-                cost = 0
-                name = ""
-                pizzalist =[]
-                dorp = "" ## Clearing Variables
-                stat = ""
-                number = 0
-                address = ""
-                main()
-                choice = 0
-                break
-            elif orderchoice == 2:
-                dp()
-                break
-            elif orderchoice == 3:
-                break
-            else:
-                print("Error please use specified integers")
+            try:
+                
+                orderchoice = int(input())
+                if orderchoice == 1:
+                    varclear()
+                    break
+                elif orderchoice == 2:
+                    dp()
+                    break
+                elif orderchoice == 3:
+                    break
+                else:
+                    print("Error please use specified integers")
+            except ValueError:
+                print('Error Non-Numerical Data format found')
         if orderchoice == 2:
             break
         if i == 5:
@@ -110,4 +117,17 @@ def main(): ## Main Function
         menu()
         order()
     finalorder()
+    while(True):
+        try:
+            print('1 - Exit \n2 - New order')
+            rest = int(input(''))
+            if rest == 1:
+                break
+            elif rest == 2:
+                varclear()
+                menu()
+            else:
+                print('error outside range')
+        except ValueError:
+            print('Error non-numerial data format detected')
 main()
