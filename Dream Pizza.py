@@ -21,7 +21,6 @@ pizzatypes = { ## List of different Pizzas
     12: "Base free Pizza"
     }
 def varclear():
-
     cost = 0
     name = ""
     pizzalist =[]
@@ -46,6 +45,7 @@ def dp():  ## Function for Delivery or Pickup
             break
         else:
             print("Invalid Response")
+            stat = input("Do you want to pickup?(y/n)")
 def finalorder(): ## Function to display The final order
     global cost, name, pizzalist, dorp, stat, number, address
     print("*"*36)
@@ -83,7 +83,6 @@ def main(): ## Main Function
                     print("Error please enter pizza within the specified range")
             except ValueError:
                 print("Error Non-Numerical Data format found")
-                
         if pizza <= 7:
             cost = cost+8.50
         elif pizza >= 8:  ## Calculating cost
@@ -95,7 +94,6 @@ def main(): ## Main Function
             3: "Continue order"
             ''')
             try:
-                
                 orderchoice = int(input())
                 if orderchoice == 1:
                     varclear()
@@ -122,7 +120,7 @@ def main(): ## Main Function
             print('1 - Exit \n2 - New order')
             rest = int(input(''))
             if rest == 1:
-                break
+                return
             elif rest == 2:
                 varclear()
                 menu()
