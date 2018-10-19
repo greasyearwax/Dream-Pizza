@@ -7,7 +7,7 @@ stat = ""
 number = 0
 address = ""
 pizzatypes = { ## List of different Pizzas
-    1: "Crunchie Muchie",
+    1: "Crunchie Munchie",
     2: "Pleasin Cheesen",
     3: "Fat Cat",
     4: "Sour flower",
